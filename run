@@ -1,0 +1,6 @@
+#!/bin/bash
+if squeue -u $USER | grep -qEo '[0-9]+'; then
+	echo Already running a job.
+else
+	srun --ntasks=1 --cpus-per-task=4 --mem-per-cpu=4096 --time=01:00:00 --partition=medium --job-name=nlp_project --pty /bin/bash
+fi

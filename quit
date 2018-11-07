@@ -1,0 +1,6 @@
+#!/bin/bash
+if squeue -u $USER | grep -qEo '[0-9]+'; then
+	scancel $(squeue -u $USER | grep -Eo '[0-9]+' | head -1)
+else
+	echo Not currently running a job.
+fi

@@ -1,0 +1,3 @@
+module avail Anaconda
+. /share/apps/rc/software/Anaconda3/5.2.0/etc/profile.d/conda.sh
+conda activate /share/apps/rc/software/Anaconda3/5.2.0/envs/ubrite-jupyter-base-1.0
