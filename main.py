@@ -39,6 +39,7 @@ command = {
 	'quit':(cmd_quit, '', 'Quit the bot session.'),
 }
 
+print('Started a chatbot session.\nType !help for a list of commands or a German sentence to evaluate it.\n')
 while run:
 	i = input()
 
