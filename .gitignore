@@ -1,6 +1,8 @@
 # Do not upload corpus to GitHub
-*.tar.gz
 *.conll09
+*.tar.gz
 
 # Ignore Python-generated files
+*.pickle
+*.pyc
 __pycache__
