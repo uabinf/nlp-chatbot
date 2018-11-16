@@ -1,4 +1,6 @@
 import nlp
+import nltk
+nltk.download('punkt')
 
 run = True
 
