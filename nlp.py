@@ -7,6 +7,8 @@ difficulty = 0
 # 
 determiners = ('das', 'dem', 'den', 'der', 'des', 'die', 'ein', 'eine', 'einem', 'einer')
 pronouns = ('deiner', 'dich', 'dir', 'du', 'er', 'es', 'euch', 'euer', 'ich', 'ihm', 'ihn', 'ihnen', 'ihr', 'ihrer', 'meiner', 'mich', 'mir', 'seiner', 'sie', 'uns', 'unser', 'wir')
+prepositions = ('bis', 'durch', 'für', 'gegen', 'ohne', 'um', 'wider', 'aus','ausser', 'außer', 'bei', 'mit', 'nach', 'seit', 'von', 'zu', 'ab', 'während', 'trotz', 'statt', 'anstatt', 
+		'außerhalb', 'wegen', 'innerhalb', 'jenseits', 'diesseits', 'an', 'hinter', 'neben', 'über', 'unter', 'vor', 'zwischen', 'entlang')
 regex_digit = re.compile('\d')
 regex_punct = re.compile('[^\w\d]')
 
@@ -46,6 +48,7 @@ def word_features(sent, i):
 		features['%+d:all_lower' % wr] = word.islower()
 		
 		# POS-specific features
+		features['%+d:is_capitalized' % wr] = word[0].isupper() in nouns
 		features['%+d:determiner' % wr] = word.lower() in determiners
 		features['%+d:pronoun' % wr] = word.lower() in pronouns
 		features['%+d:digit' % wr] = bool(regex_digit.match(word))
