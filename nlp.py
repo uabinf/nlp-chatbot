@@ -50,7 +50,7 @@ def word_features(sent, i):
 		features['%+d:all_lower' % wr] = word.islower()
 		
 		# POS-specific features
-		features['%+d:is_capitalized' % wr] = word[0].isupper() in nouns
+		#features['%+d:is_capitalized' % wr] = word[0].isupper() in nouns
 		features['%+d:determiner' % wr] = word.lower() in determiners
 		features['%+d:pronoun' % wr] = word.lower() in pronouns
 		features['%+d:digit' % wr] = bool(regex_digit.match(word))
