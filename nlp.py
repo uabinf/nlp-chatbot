@@ -9,6 +9,8 @@ determiners = ('das', 'dem', 'den', 'der', 'des', 'die', 'ein', 'eine', 'einem',
 pronouns = ('deiner', 'dich', 'dir', 'du', 'er', 'es', 'euch', 'euer', 'ich', 'ihm', 'ihn', 'ihnen', 'ihr', 'ihrer', 'meiner', 'mich', 'mir', 'seiner', 'sie', 'uns', 'unser', 'wir')
 prepositions = ('bis', 'durch', 'für', 'gegen', 'ohne', 'um', 'wider', 'aus','ausser', 'außer', 'bei', 'mit', 'nach', 'seit', 'von', 'zu', 'ab', 'während', 'trotz', 'statt', 'anstatt', 
 		'außerhalb', 'wegen', 'innerhalb', 'jenseits', 'diesseits', 'an', 'hinter', 'neben', 'über', 'unter', 'vor', 'zwischen', 'entlang')
+conjunctions = ('aber', 'beziehungsweise', 'denn', 'oder', 'sondern', 'und', 'als', 'bevor', 'bis', 'dass', 'damit', 'nachdem', 'ob', 'obwohl', 'seit', 'seitdem', 'sobald', 'sofern', 'soweit'
+	       'sowie', 'während', 'weil', 'wenn', 'wie', 'wo')
 regex_digit = re.compile('\d')
 regex_punct = re.compile('[^\w\d]')
 
