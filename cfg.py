@@ -33,8 +33,8 @@ def beginExtraction():
 	 	if isinstance(value, dict):
 			recursiveCFG(value, words, pos)
 
-	 for i in SENT:
-	 	print(i, '=>', SENT[i], '\n')
+	 #for i in SENT:
+	 #	print(i, '=>', SENT[i], '\n')
 
 def extractCFG(dataset, words, pos):
     SENT = {}
