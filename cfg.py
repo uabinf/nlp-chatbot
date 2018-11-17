@@ -1,4 +1,3 @@
-traimport nltk
 
 def beginExtraction():
 	print("Dowloading Corpus...")
