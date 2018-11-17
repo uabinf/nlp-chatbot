@@ -1,6 +1,5 @@
 import nlp
 import nltk
-nltk.download('punkt')
 
 run = True
 
@@ -41,8 +40,10 @@ command = {
 	'quit':(cmd_quit, '', 'Quit the bot session.'),
 }
 
-print('Started a chatbot session.\nType !help for a list of commands or a German sentence to evaluate it.\n')
+print('Extracting Context Free Grammar...')
 CFG = cfg.beginExtraction()
+print('Started a chatbot session.\nType !help for a list of commands or a German sentence to evaluate it.\n')
+
 while run:
 	i = input()
 
