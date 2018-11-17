@@ -36,26 +36,26 @@ def beginExtraction():
 	 #	print(i, '=>', SENT[i], '\n')
 
 def extractCFG(dataset, words, pos):
-    SENT = {}
-    for i in range(len(words)):
-        for j in range(len(pos)):
-            ### Setting inital Sentence Starters ###
-            if words[i-1] in  '.?!':
-                SENT[pos[j]] = {}
-            for next in SENT.keys():
-                if pos[j-1] == next:
-                    SENT[next][pos[j]] = {}
-    return SENT
+	SENT = {}
+    	for i in range(len(words)):
+        	for j in range(len(pos)):
+            	### Setting inital Sentence Starters ###
+            	if words[i-1] in  '.?!':
+                	SENT[pos[j]] = {}
+           	for next in SENT.keys():
+                	if pos[j-1] == next:
+                    	SENT[next][pos[j]] = {}
+    	return SENT
             
 def recursiveCFG(dataset, words, pos):
-    for i in range(len(words)-1):
-        for j in range(len(pos)-1):
-            for next in dataset:
-                if pos[j-1] == next:
-                    dataset[next][pos[j]] = {}
-                if words[i+1] in '.!?':
-                    dataset[next]['NULL'] = {}
-    return dataset
+    	for i in range(len(words)-1):
+        	for j in range(len(pos)-1):
+            		for next in dataset:
+                		if pos[j-1] == next:
+                    			dataset[next][pos[j]] = {}
+                				if words[i+1] in '.!?':
+                   					dataset[next]['NULL'] = {}
+	return dataset
     
 #words = []
 #pos = []
