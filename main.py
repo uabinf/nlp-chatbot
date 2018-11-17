@@ -55,6 +55,7 @@ while run:
 		else:
 			print('Invalid command: %s' % args[0])
 	else:
+		CFG = cfg.beginExtraction()
 		response = nlp.rate_sentence(i)
 
 		print('Response from bot:')
