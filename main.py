@@ -42,6 +42,7 @@ command = {
 }
 
 print('Started a chatbot session.\nType !help for a list of commands or a German sentence to evaluate it.\n')
+CFG = cfg.beginExtraction()
 while run:
 	i = input()
 
@@ -55,7 +56,6 @@ while run:
 		else:
 			print('Invalid command: %s' % args[0])
 	else:
-		CFG = cfg.beginExtraction()
 		response = nlp.rate_sentence(i)
 
 		print('Response from bot:')
