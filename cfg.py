@@ -1,6 +1,6 @@
-import nltk
+traimport nltk
 
-def extractCorpus():
+def beginExtraction():
 		print("Dowloading Corpus...")
     file = 'tiger_release_aug07.corrected.16012013.conll09'
     myfile = open(file)
