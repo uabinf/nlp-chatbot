@@ -54,7 +54,7 @@ def recursiveCFG(dataset, words, pos):
                     dataset[next][pos[j]] = {}
                 if words[i+1] in '.!?':
                     dataset[next]['NULL'] = {}
-     return dataset
+    return dataset
 
 #words = []
 #pos = []
