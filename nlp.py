@@ -121,7 +121,7 @@ def init_tagger():
 			# Load previously-trained tagger from file
 			print('Loading previously-trained tagger...')
 			with open('tagger.pickle', 'rb') as tagfile:
-				tagger = pickle.load(tagfile)
+				tagger = pickle.load(tagfile)				
 
 def format_error(word, chance, message):
 	return 'Mistake (%s%% certainty) at word \'%s\': %s' % (chance, word, message)
