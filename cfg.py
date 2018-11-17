@@ -44,7 +44,7 @@ def extractCFG(dataset, words, pos):
             for next in SENT.keys():
                 if pos[i-1] == next:
                     SENT[next][pos[j]] = {}
-     return SENT
+    return SENT
 
 def recursiveCFG(dataset, words, pos):
     for i in range(len(words)-1):
