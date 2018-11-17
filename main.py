@@ -1,4 +1,5 @@
 import nlp
+import cfg
 import nltk
 
 run = True
