@@ -1,7 +1,7 @@
 def beginExtraction():
     print("Downloading Corpus...")
     file = 'tiger_release_aug07.corrected.16012013.conll09'
-    my file = open(file)
+    myfile = open(file)
     sentences = myfile.read()
     print("Tokenizing Corpus...")
     sentences = sentences.split('\n')
