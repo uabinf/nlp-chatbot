@@ -43,6 +43,8 @@ command = {
 
 print('Extracting Context Free Grammar...')
 CFG = cfg.beginExtraction()
+print('CFG Extraction Complete...')
+
 print('Started a chatbot session.\nType !help for a list of commands or a German sentence to evaluate it.\n')
 
 while run:
