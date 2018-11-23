@@ -43,7 +43,7 @@ def beginExtraction():
     #   if POS not in tagset:
     #   tagset.append(POS)
     
-    print("Extracting CFG...")
+    #print("Extracting CFG...")
     SENT = extractCFG(pos_tags, words, pos)
     for value in SENT.values():
         if isinstance(value, dict):
