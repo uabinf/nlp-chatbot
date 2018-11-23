@@ -1,3 +1,5 @@
+import nltk, os.path, pickle, re, requests, sys, tarfile
+
 def beginExtraction():
     print("Downloading TIGER Corpus...")
     if not os.path.isfile('tiger_release_aug07.corrected.16012013.conll09'):
