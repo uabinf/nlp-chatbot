@@ -1,17 +1,17 @@
 import nltk, os.path, pickle, re, requests, sys, tarfile
 
 def beginExtraction():
-    print("Downloading TIGER Corpus...")
+    #print("Downloading TIGER Corpus...")
     data = ''
     if not os.path.isfile('tiger_release_aug07.corrected.16012013.conll09'):
-        print("Downloading TIGER Corpus...")
+        #print("Downloading TIGER Corpus...")
         url = 'http://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/TIGERCorpus/download/tigercorpus-2.2.conll09.tar.gz'
         r = requests.get(url, allow_redirects=True)
         
         with open('tigercorpus-2.2.conll09.tar.gz', 'wb') as corpus:
             corpus.write(r.content)
         
-        print('Extracting TIGER Corpus...')
+        #print('Extracting TIGER Corpus...')
         with tarfile.open('tigercorpus-2.2.conll09.tar.gz', 'r:gz') as tarref:
             data = tarref.read()
 	        #sentences = data.split('\n')
@@ -20,7 +20,7 @@ def beginExtraction():
     #file = 'tiger_release_aug07.corrected.16012013.conll09'
     #myfile = open(file)
     #sentences = myfile.read()
-    print("Tokenizing Corpus...")
+    #print("Tokenizing Corpus...")
     sentences = data.split('\n')
     pos_tags = []
     
