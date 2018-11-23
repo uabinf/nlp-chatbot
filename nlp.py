@@ -50,7 +50,6 @@ def word_features(sent, i):
 		features['%+d:all_lower' % wr] = word.islower()
 		
 		# POS-specific features
-		#features['%+d:is_capitalized' % wr] = word[0].isupper() in nouns
 		features['%+d:determiner' % wr] = word.lower() in determiners
 		features['%+d:pronoun' % wr] = word.lower() in pronouns
 		features['%+d:digit' % wr] = bool(regex_digit.match(word))
@@ -126,12 +125,21 @@ def init_tagger():
 def format_error(word, chance, message):
 	return 'Mistake (%s%% certainty) at word \'%s\': %s' % (chance, word, message)
 
+def tag_sentence(tokens):
+	# Append empty POS to each word in sentence, classify word-by-word
+	tokens = [(tokens[i], '') for i in range(len(tokens))]
+	featureset = sent_features(tokens)
+	tags = [(tokens[i], tagger.classify(featureset[i])) for i in range(len(featureset))]
+
+	return tags
+
 def rate_sentence(s):
 	global tagger
 
 	# Initialize tagger, get sentence tokens
 	init_tagger()
 	tokens = nltk.word_tokenize(s)
+	tags = tag_sentence(tokens)
 	feedback = []
 	total = len(tokens)
 	correct = total
