@@ -12,6 +12,7 @@ def beginExtraction():
 		with tarfile.open('tigercorpus-2.2.conll09.tar.gz', 'r:gz') as tarref:
 			sentences = tarref.extractall('.')
 	
+    
     #print("Downloading Corpus...")
     #file = 'tiger_release_aug07.corrected.16012013.conll09'
     #myfile = open(file)
