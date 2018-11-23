@@ -12,14 +12,14 @@ def beginExtraction():
         
         print('Extracting TIGER Corpus...')
         with tarfile.open('tigercorpus-2.2.conll09.tar.gz', 'r:gz') as tarref:
-            sentences = tarref.read()
+            data = tarref.read()
        
     #print("Downloading Corpus...")
     #file = 'tiger_release_aug07.corrected.16012013.conll09'
     #myfile = open(file)
     #sentences = myfile.read()
     print("Tokenizing Corpus...")
-    sentences = sentences.split('\n')
+    sentences = data.split('\n')
     pos_tags = []
     
     tokenized = [x for x in sentences if x]
