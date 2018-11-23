@@ -44,7 +44,7 @@ def beginExtraction():
     #   tagset.append(POS)
     
     print("Extracting CFG...")
-    SENT = extractCFG(pos_tags, word, pos)
+    SENT = extractCFG(pos_tags, words, pos)
     for value in SENT.values():
         if isinstance(value, dict):
             recursiveCFG(value, words, pos)
