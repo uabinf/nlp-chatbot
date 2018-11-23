@@ -1,8 +1,21 @@
 def beginExtraction():
     print("Downloading Corpus...")
-    file = 'tiger_release_aug07.corrected.16012013.conll09'
-    myfile = open(file)
-    sentences = myfile.read()
+	if not os.path.isfile('tiger_release_aug07.corrected.16012013.conll09'):
+		print('Downloading TIGER corpus...')
+		url = 'http://www.ims.uni-stuttgart.de/forschung/ressourcen/korpora/TIGERCorpus/download/tigercorpus-2.2.conll09.tar.gz'
+		r = requests.get(url, allow_redirects=True)
+
+		with open('tigercorpus-2.2.conll09.tar.gz', 'wb') as corpus:
+			corpus.write(r.content)
+
+		print('Extracting TIGER corpus...')
+		with tarfile.open('tigercorpus-2.2.conll09.tar.gz', 'r:gz') as tarref:
+			sentences = tarref.extractall('.')
+	
+    #print("Downloading Corpus...")
+    #file = 'tiger_release_aug07.corrected.16012013.conll09'
+    #myfile = open(file)
+    #sentences = myfile.read()
     print("Tokenizing Corpus...")
     sentences = sentences.split('\n')
     pos_tags = []
