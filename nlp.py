@@ -72,6 +72,7 @@ def get_tagset(dataset):
 	for sent in dataset:
 		for word in sent:
 			tagset.add(word[1])
+	print(tags)
 	return tagset
 
 def test_tagger(features):
