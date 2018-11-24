@@ -72,7 +72,6 @@ def get_tagset(dataset):
 	for sent in dataset:
 		for word in sent:
 			tagset.add(word[1])
-	print(tags)
 	return tagset
 
 def test_tagger(features):
@@ -131,7 +130,7 @@ def tag_sentence(tokens):
 	tokens = [(tokens[i], '') for i in range(len(tokens))]
 	featureset = sent_features(tokens)
 	tags = [(tokens[i], tagger.classify(featureset[i])) for i in range(len(featureset))]
-
+	print(tags)
 	return tags
 
 def rate_sentence(s):
