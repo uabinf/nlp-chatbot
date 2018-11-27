@@ -1,6 +1,7 @@
 import nlp
 import cfg
 import nltk
+import rule-based-cfg
 
 run = True
 
@@ -41,9 +42,9 @@ command = {
 	'quit':(cmd_quit, '', 'Quit the bot session.'),
 }
 
-print('Grammar Extraction Starting...')
-CFG = cfg.beginExtraction()
-print('Grammar Extraction Finished...')
+#print('Grammar Extraction Starting...')
+#CFG = cfg.beginExtraction()
+#print('Grammar Extraction Finished...')
 
 print('Started a chatbot session.\nType !help for a list of commands or a German sentence to evaluate it.\n')
 
