@@ -151,7 +151,7 @@ def rate_sentence(s):
 	# feedback.append(format_error('donald', 0.99, 'Expected capitalization at start of sentence.'))
 
 	if not feedback:
-		feedback.append('No errors were found!')
+		feedback = 'No errors were found! Grammatical Input!!'
 	
 	# At end, give a final sentence score
 	#feedback.append('%d / %d words correct' % (correct, total))
