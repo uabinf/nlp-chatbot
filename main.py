@@ -1,7 +1,7 @@
 import nlp
 import cfg
 import nltk
-import rule-based-cfg
+import cfg2
 
 run = True
 
