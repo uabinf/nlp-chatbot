@@ -1,4 +1,4 @@
-import nltk, os.path, pickle, re, requests, sys, tarfile, rule-based-cfg
+import nltk, os.path, pickle, re, requests, sys, tarfile, cfg2
 
 # Global settings
 tagger = None
