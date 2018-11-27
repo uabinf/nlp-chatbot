@@ -1,4 +1,4 @@
-import nltk, os.path, pickle, re, requests, sys, tarfile
+import nltk, os.path, pickle, re, requests, sys, tarfile, rule-based-cfg
 
 # Global settings
 tagger = None
@@ -140,9 +140,10 @@ def rate_sentence(s):
 	init_tagger()
 	tokens = nltk.word_tokenize(s)
 	tags = tag_sentence(tokens)
-	feedback = []
-	total = len(tokens)
-	correct = total
+	feedback = checkSyntax(tags) ##Check if Sentence Sequence Occurs in RB-CFG
+	#feedback = []
+	#total = len(tokens)
+	#correct = total
 
 	# Perform a bunch of checks on sentence, add errors like so
 	# feedback.append(format_error('he', 0.95, 'Expected possessive pronoun.'))
@@ -152,6 +153,6 @@ def rate_sentence(s):
 		feedback.append('No errors were found!')
 	
 	# At end, give a final sentence score
-	feedback.append('%d / %d words correct' % (correct, total))
-	feedback.append('Overall score: %s%%' % (100 * (correct / total)))
+	#feedback.append('%d / %d words correct' % (correct, total))
+	#feedback.append('Overall score: %s%%' % (100 * (correct / total)))
 	return feedback
