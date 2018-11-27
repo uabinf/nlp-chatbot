@@ -6,14 +6,14 @@ def loadGrammar():
 
 def checkSyntax(sentences, checker, grammar, counter):
     decision = ''
-    for word in sentence:
-        if word == sentence[0]:
+    for word in sentences:
+        if word == sentences[0]:
             if word[1] in grammar.keys():
                 checker.append('Grammatical')
-                sentences.remove(sentence[0])
+                sentences.remove(sentences[0])
                 grammar = grammar[word[1]]
                 counter += 1
-                checkGram(sentence, checker, grammar, counter)
+                checkGram(sentences, checker, grammar, counter)
             else:
                 checker.append('Ungrammatical')
                 print("Incorrect POS at Position", counter)
