@@ -63,7 +63,7 @@ while run:
 	else:
 		response = nlp.rate_sentence(i)
 
-		print('Response from bot:')
-		for r in response:
-			print('\t%s' % r)
-		print('')
+		#print('Response from bot:')
+		#for r in response:
+		#	print('\t%s' % r)
+		#print('')
