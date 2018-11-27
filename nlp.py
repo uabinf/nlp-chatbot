@@ -135,12 +135,13 @@ def tag_sentence(tokens):
 
 def rate_sentence(s):
 	global tagger
-
+	
 	# Initialize tagger, get sentence tokens
 	init_tagger()
 	tokens = nltk.word_tokenize(s)
 	tags = tag_sentence(tokens)
-	feedback = cfg2.checkSyntax(tags) ##Check if Sentence Sequence Occurs in RB-CFG
+	grammar = cfg2.loadGrammar()
+	feedback = cfg2.checkSyntax(tags, [], grammar, 0) ##Check if Sentence Sequence Occurs in RB-CFG
 	#feedback = []
 	#total = len(tokens)
 	#correct = total
