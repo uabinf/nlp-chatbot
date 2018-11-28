@@ -15,7 +15,7 @@ def checkSyntax(sentences, checker, grammar, counter):
                 sentences.remove(sentences[0])
                 grammar = grammar[word[1]]
                 counter += 1
-                checkGram(sentences, checker, grammar, counter)
+                checkSyntax(sentences, checker, grammar, counter)
             else:
                 checker.append('Ungrammatical')
                 print("Incorrect POS at Position", counter)
