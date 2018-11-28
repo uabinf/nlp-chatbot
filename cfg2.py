@@ -1,7 +1,9 @@
+
 def loadGrammar():
-    grammar = {'ART':{'NN':{'VVFIN':{'ADJA':{'$.':{}}, 'ART':{'NN':{'$.':{}}}}}}, 
-           'VVFIN':{'PPER':{'ART':{'NN':{'$.':{}}}}}, 'NE':{'VVFIN':{'ART':{'NN':{'$.':{}}}, 
-                                                                     'APPRART':{'NN':{'$.'}}, 'NN':{'$.':{}}}}}
+    grammar = {'PPER':{'VVFIN':{'ART':{'NN':{'$.'}}, 'APPR':{'ART':{'NN':{'$.'}}}}}, 
+               'ART':{'NN':{'VVFIN':{'ADJA':{'$.':{}}, 'ART':{'NN':{'$.':{}}}}}}, 
+               'VVFIN':{'PPER':{'ART':{'NN':{'$.':{}}}}}, 
+               'NE':{'VVFIN':{'ART':{'NN':{'$.':{}}},'APPRART':{'NN':{'$.'}}, 'NN':{'$.':{}}}}}
     return grammar
 
 def checkSyntax(sentences, checker, grammar, counter):
