@@ -1,6 +1,6 @@
 
 def loadGrammar():
-    grammar = {'PPER':{'VVFIN':{'ART':{'NN':{'$.'}}, 'APPR':{'ART':{'NN':{'$.'}}}}}, 
+    grammar = {'PPER':{'VVFIN':{'ART':{'NN':{'$.':{}}}, 'APPR':{'ART':{'NN':{'$.':{}}}}}}, 
                'ART':{'NN':{'VVFIN':{'ADJA':{'$.':{}}, 'ART':{'NN':{'$.':{}}}}}}, 
                'VVFIN':{'PPER':{'ART':{'NN':{'$.':{}}}}}, 
                'NE':{'VVFIN':{'ART':{'NN':{'$.':{}}},'APPRART':{'NN':{'$.'}}, 'NN':{'$.':{}}}}}
